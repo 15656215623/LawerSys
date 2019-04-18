@@ -7,10 +7,6 @@
 	<constant name="struts.action.extension" value="do,action,kk"></constant>
 	<package name="socket" extends="struts-default">
 		<default-interceptor-ref name="defaultStack"></default-interceptor-ref>
-	     <!-- 根据专长查找-->
-	<!-- 	<action name="server" class="serverSocket" method="bykind">
-		<result name="success">/websocket.jsp</result>
-		</action> -->		
 	</package>
 	
 </struts>
