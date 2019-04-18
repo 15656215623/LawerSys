@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.action.extension" value="do,action,kk"></constant>
+	<package name="user" extends="struts-default">
+		<default-interceptor-ref name="defaultStack"></default-interceptor-ref>
+		<!--普通用户 -->
+		<!-- 注册 -->
+		<action name="user_r" class="userRegedit" method="regedit_user">
+		</action>
+		<!-- 登录 -->
+		<action name="user_l" class="userRegedit" method="login_user">
+		</action>
+		<!-- 重置密码 -->
+		<action name="user_repass" class="userCenter" method="repass">
+		</action>
+		<!-- 律师 -->
+		<action name="audit_r" class="auditRegedit" method="regedit_audit">
+		<result name="success">/audit_during.jsp</result>
+		</action>
+		<action name="query_a" class="auditRegedit" method="query_audit">
+		<result name="success">/Query_Audit.jsp</result>
+		</action>
+		<!-- 律师登录的请求 -->
+		<action name="audit_l" class="lawerRegedit" method="login">
+		</action>
+		<!-- 律师登录的请求 -->
+		<action name="audit_pass" class="lawerRegedit" method="auditPass">
+		</action>
+		<!-- 超级管理员-->
+		<action name="super_l" class="superUser" method="login_user">
+		</action>
+		<action name="admin_u" class="admin_User" method="quertuser">
+		<result name="success">/alluser.jsp</result>
+		</action>
+		<action name="admin_c" class="admin_Common" method="quertuser">
+		<result name="success">/allcommon.jsp</result>
+		</action>
+		<action name="admin_d" class="admin_Delete" method="delete_user">
+		<result name="success" type="redirectAction">admin_u</result>
+		</action>
+		<action name="admin_dc" class="admin_Delete" method="delete_comm">
+		<result name="success" type="redirectAction">admin_c</result>
+		</action>
+		<!--审核案例 之查询 -->
+		<action name="ademo" class="auditDemos" method="querydemo">
+		<result name="success">/Query_Demo.jsp</result>
+		</action>
+		<!-- 审核案例 之下载-->
+		<action name="ddemo" class="auditDemos" method="downfile">
+		</action>
+		<!--审核案例 之审核通过-->
+		<action name="pass_demo" class="auditDemos" method="over_Audit">
+		</action>
+		<!--审核案例  -->
+		
+	</package>
+	<!-- 律师页面 -->
+		<package name="layer" extends="struts-default">
+		<default-interceptor-ref name="defaultStack"></default-interceptor-ref>
+		<!--  查询个人信息-->
+		<action name="lay_data" class="layerCenter" method="querydata">
+		<result name="success">/layerinfo.jsp</result>
+		</action>
+		<!-- 修改资料之查询 -->
+		<action name="lay_udata" class="layerCenter" method="updata_data">
+		<result name="success">/ulayerinfo.jsp</result>
+		</action>
+		<!-- 修改资料之修改 -->
+		<action name="layer_update" class="layerCenter" method="update">
+		</action>
+		<!-- 上传头像 -->
+		<action name="layer_logo" class="layerCenter" method="uplogo"> 
+		</action>
+		<!-- 上传多个案例 -->
+		<action name="layer_demo" class="upMoreDemo" method="updemo"> 
+		</action>
+		<!-- 上传多个案例 -->
+		<!-- 查询我的案例 -->
+		<action name="mydemo" class="LawerDemo" method="query_kinds"> 
+		<result name="success">/layerkinds.jsp</result>
+		</action>
+		<!--查询我的案例   -->
+		</package>
+			<!-- 律师页面 -->
+		<include file="struts_search.xml"/> 
+		   <!-- 通讯页面 -->
+		   <include file="struts_socket.xml"/> 
+</struts>

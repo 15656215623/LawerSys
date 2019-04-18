@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<!-- 实体类和表的映射 -->
+<class name="cn.com.bean.Layer" table="Layer" catalog="lawer" >
+<id name="lid" column="lid"  type="java.lang.Integer">
+<generator class="identity"></generator>
+</id>
+<property name="caste" type="java.lang.String" length="255"></property>
+<property name="lanme" type="java.lang.String" length="255"></property>
+<property name="password" type="java.lang.String" length="255"></property>
+<property name="laddress" type="java.lang.String" length="255"></property>
+<property name="officename" type="java.lang.String" length="255"></property>
+<property name="liseid" type="java.lang.String" length="255"></property>
+<property name="ltime" type="java.lang.String" length="255"></property>
+<property name="kinds" type="java.lang.String" length="255"></property>
+<property name="logo" type="java.lang.String" length="255"></property>
+<property name="instroduce" type="java.lang.String" length="255"></property>
+</class>
+</hibernate-mapping>

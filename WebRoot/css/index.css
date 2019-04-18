@@ -1,0 +1,59 @@
+#lay_reg {
+	position: absolute;
+	display: none;
+	height: 550px;
+	width: 100%;
+	background-color: white;
+}
+#user_reg {
+	position: absolute;
+	display: block;
+	height: 248px;
+	width: 100%;
+	background-color: white;
+}
+#lawerlo{
+	position: absolute;
+	display: none;
+	height: 248px;
+	width: 100%;
+	background-color: white;	
+}
+#commlo{
+	position: absolute;
+	display: block;
+	height: 248px;
+	width: 100%;
+	background-color: white;
+}
+.table tr td {
+	border: 1px solid white;
+}
+body{
+cursor:pointer;
+}
+.mylogo {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	border-radius: 50%;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+	#kinds ul li{
+				float:left;
+				margin-left:3%;
+                padding-top:2%;
+                list-style:none;
+			}
+			
+			#allli  li{
+				float:left;
+				margin-left:3%;
+                padding-top:2%;
+                list-style:none;
+			}
+			#kinds ul{
+			width:100%;
+			}

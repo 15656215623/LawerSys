@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.action.extension" value="do,action,kk"></constant>
+	<package name="search" extends="struts-default">
+		<default-interceptor-ref name="defaultStack"></default-interceptor-ref>
+	     <!-- 根据专长查找-->
+		<action name="searcher" class="searchByGood" method="bykind">
+		<result name="success">/search_layer.jsp</result>
+		</action>	
+		<!-- 根据名字和律师事务所查询 -->	
+		<action name="condition" class="searchByGood" method="byname">
+		<result name="success">/search_layer.jsp</result>
+		</action>	
+	</package>
+	
+</struts>

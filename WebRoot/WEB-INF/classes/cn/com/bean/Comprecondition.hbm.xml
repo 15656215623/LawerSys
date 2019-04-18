@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<!-- 实体类和表的映射 -->
+<class name="cn.com.bean.Comprecondition" table="comprecondition" catalog="lawer" >
+<id name="lid" column="lid"  type="java.lang.Integer">
+<generator class="identity"></generator>
+</id>
+<property name="lanme" type="java.lang.String" length="255"></property>
+<property name="laddress" type="java.lang.String" length="255"></property>
+<property name="ht" type="java.lang.Integer" length="255"></property>
+<property name="jd" type="java.lang.Integer" length="255"></property>
+<property name="ld" type="java.lang.Integer" length="255"></property>
+<property name="xs" type="java.lang.Integer" length="255"></property>
+<property name="jt" type="java.lang.Integer" length="255"></property>
+<property name="fc" type="java.lang.Integer" length="255"></property>
+<property name="jz" type="java.lang.Integer" length="255"></property>
+<property name="lh" type="java.lang.Integer" length="255"></property>
+</class>
+</hibernate-mapping>

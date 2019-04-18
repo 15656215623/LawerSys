@@ -1,0 +1,38 @@
+#accordion{
+	width:15%;
+	margin-left: 4%;
+	position: relative;
+	float: left;
+	margin-top: 5%;
+}
+#right{
+position: relative;
+margin-left: 27%;
+margin-top: 6%;
+width: 70%;
+height: 53%;
+}
+#rgt{
+
+    position: relative;
+    margin-left: 11%;
+    margin-top: 6%;
+    width: 80%;
+    height: 67%;
+
+}
+#ufile{
+opacity:0;
+}
+#dfile{
+opacity:0;
+}
+#logoname{
+	display: none;
+}
+#demoname{
+	display: none;
+}
+#kk{
+	display: none;
+}
