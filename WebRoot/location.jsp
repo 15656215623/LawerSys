@@ -16,7 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<h1 id="allmap"></h1>
 </body>
 </html>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 //提供省份
 var pro='';
 var city='';
@@ -49,4 +49,3 @@ var city='';
 		}        
 	},{enableHighAccuracy: true})
 </script>
- -->

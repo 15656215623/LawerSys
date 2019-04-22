@@ -1,5 +1,6 @@
 package cn.com.service;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 import java.util.Map;
 import org.apache.struts2.interceptor.RequestAware;
 import org.hibernate.Query;
@@ -10,7 +11,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import cn.com.bean.Comprecondition;
-@Repository(value = "LawerDemo")
+@Repository(value = "lawerDemo")
 @Scope("prototype")
 public class LawerDemo implements RequestAware {
 	@Autowired
@@ -38,8 +39,8 @@ public class LawerDemo implements RequestAware {
 		}
 		query.setString(0, lanme);
 		System.out.println(lanme);
-		Comprecondition com = (Comprecondition) query.uniqueResult();
-	    map.put("c", com);
+		List<Comprecondition> list = query.list();
+	    map.put("list", list);
 		return "success";
 	}
 

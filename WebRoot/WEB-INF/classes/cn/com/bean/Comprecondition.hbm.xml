@@ -16,5 +16,7 @@
 <property name="fc" type="java.lang.Integer" length="255"></property>
 <property name="jz" type="java.lang.Integer" length="255"></property>
 <property name="lh" type="java.lang.Integer" length="255"></property>
+<property name="count" type="java.lang.Integer" length="255"></property>
+<property name="start" type="java.lang.Integer" length="255"></property>
 </class>
 </hibernate-mapping>

@@ -26,7 +26,7 @@ public class SearchByLocation implements RequestAware{
 	//根据纠纷的类型查询
 	@Transactional
 	public String bylocat(){
-		String sql="select new Showlayer(c.lanme,c.laddress,c.ht,c.jd,c.ld,c.xs,c.jt,c.fc,c.jz,c.lh,l.logo,l.officename) from Comprecondition c, Layer l  where c.lanme=l.lanme and l.laddress like ?";
+		String sql="select new Showlayer(c.lanme,c.laddress,c.ht,c.jd,c.ld,c.xs,c.jt,c.fc,c.jz,c.lh,l.logo,l.officename,l.kinds,c.start) from Comprecondition c, Layer l  where c.lanme=l.lanme and l.laddress like ?";
 		Session session = sf.getCurrentSession();
 		Query query = session.createQuery(sql);
 		//把kind转换

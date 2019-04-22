@@ -14,7 +14,7 @@
 <script src="js/skiller.js"></script>
 </head>
 <body>
-	<jsp:include page="head.jsp"></jsp:include>
+	<jsp:include page="uhead.jsp"></jsp:include>
 	<!--搜索公共的条件  -->
 <jsp:include page="conditionPart.jsp"></jsp:include>
 <br>

@@ -1,0 +1,36 @@
+#chat{
+	width:500px;
+	height: 400px;
+	border:1px solid gray;
+	margin-left: -1%;
+	margin-bottom: 3%;
+}
+.youright{
+width:100%;
+margin-left: 325px;
+}
+.youleft{
+	width:100%;
+float: left;	
+}
+body,html{
+	background-color: #337ab7;
+}
+#chatroom{
+	width: 520px;
+	height: 400px;
+	position: relative;
+	margin-left: 28%;
+	background-color: #337ab7;
+}
+.userlogo{
+	width:40px;
+	height: 40px;
+	border-radius:50%;
+}
+ul{
+	list-style: none;
+}
+#message-list{
+	margin-left:-21px;
+}

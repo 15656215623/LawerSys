@@ -11,6 +11,11 @@
 		<action name="searcher" class="searchByGood" method="bykind">
 		<result name="success">/search_layer.jsp</result>
 		</action>	
+		<!--统计用户咨询类型  -->
+		<action name="ukinds" class="userCenter" method="countkinds">
+		<result name="success">/search_user.jsp</result>
+		</action>	
+		<!--统计用户咨询类型  -->
 		<!-- 根据律师名称或者事务所名称来查询 -->	
 		<action name="searchbyname" class="searchByGood" method="byname">
 		<result name="success">/search_layer.jsp</result>
@@ -27,7 +32,14 @@
 		<action name="single" class="singleLayerInfo" method="querydata">
 		<result name="success">/mainlayer.jsp</result>
 		</action>	
-		
+		<!-- 用户推送 -->
+		<action name="upush" class="pushLawer" method="push">
+		<result name="success">/uindex.jsp</result>
+		</action>	
+		<!-- 游客推送 -->
+		<action name="apush" class="pushLawer" method="apush">
+		<result name="success">/index.jsp</result>
+		</action>	
 	</package>
 	
 </struts>

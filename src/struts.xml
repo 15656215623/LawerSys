@@ -80,13 +80,13 @@
 		</action>
 		<!-- 上传多个案例 -->
 		<!-- 查询我的案例 -->
-		<action name="mydemo" class="LawerDemo" method="query_kinds"> 
+		<action name="mydemo" class="lawerDemo" method="query_kinds"> 
 		<result name="success">/layerkinds.jsp</result>
 		</action>
 		<!--查询我的案例   -->
 		</package>
 			<!-- 律师页面 -->
 		<include file="struts_search.xml"/> 
-		   <!-- 通讯页面 -->
-		   <include file="struts_socket.xml"/> 
+		   <!-- 聊天功能 -->
+		     <include file="struts_chart.xml"/> 
 </struts>

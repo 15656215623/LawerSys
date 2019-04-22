@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<td>${audit.liseid}</td>
 			<td>${audit.ltime}年</td>
 			<td>${audit.kinds}</td>
-			<td><button id="${audit.lid}" onclick="getpass(${audit.lid})" style="background-color:#8ac007;color:white">通过</button></td>		
+			<td><button id="${audit.lid}"  onclick="getpass('${audit.lid}')" style="background-color:#8ac007;color:white">通过</button></td>		
 		</tr>
 			</s:iterator>
 	</tbody>

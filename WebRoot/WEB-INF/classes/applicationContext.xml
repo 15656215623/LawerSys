@@ -41,7 +41,11 @@
 				<value>classpath:cn/com/bean/AuDemo.hbm.xml</value>
 				<value>classpath:cn/com/bean/LawDemo.hbm.xml</value>
 				<value>classpath:cn/com/bean/Comprecondition.hbm.xml</value>
-				 <value>classpath:cn/com/bean/ShowLayer.hbm.xml</value> 
+				<value>classpath:cn/com/bean/Showlayer.hbm.xml</value>
+				<value>classpath:cn/com/bean/Chart.hbm.xml</value>
+				<value>classpath:cn/com/bean/Order.hbm.xml</value>
+				<value>classpath:cn/com/bean/Complaint.hbm.xml</value>
+				<value>classpath:cn/com/bean/UComplaint.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -53,5 +57,9 @@
 	</bean>
 	<tx:annotation-driven transaction-manager="transactionManager"
 		proxy-target-class="true" />
+		<!--  手动配置事务管理器-->
+		
+		
+		<!--  手动配置事务管理器-->
 </beans>
 

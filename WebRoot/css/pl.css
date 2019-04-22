@@ -1,0 +1,12 @@
+#service,#service li{
+	float: left;
+	list-style: none;
+}
+#ability,#ability li{
+	float: left;
+	list-style: none;	
+}
+#speed,#speed li{
+	float: left;
+	list-style: none;	
+}

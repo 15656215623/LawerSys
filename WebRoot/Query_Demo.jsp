@@ -11,7 +11,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>超级管理员后台-审核上传的案例</title>  
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <script src="js/query_audit.js"></script>
     <script src="js/demo.js"></script>
   <style>
   html{

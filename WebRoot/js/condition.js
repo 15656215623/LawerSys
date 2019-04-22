@@ -1,20 +1,30 @@
-function moreserarch(){
-	//点击这个按钮的时候，获取三个条件的文字
-	var sf=$("#prov").val();//省份
-	var cs=$("#ct").val();//城市
-	var kk=$("#akind").val();//纠纷类型
-	var other=$("#others").val();//案例类型
-	if(kk=="选择案例类型"){
+$(function(){
+	$("#mycity").citySelect({prov:"海南",city:"海口"});
+})
+//多条件联合查询
+function moresearch(){
+	//获取城市，
+	var ct=$("#ct").val();
+	//获取类型
+	var kk=$("#kk").val();
+	//获取综合排序
+	var orderby=$("#orderby").val();
+	if(kk=="请选择纠纷类型"){
 		kk=null;
 	}
-	if(other=="综合排序"){
-		other=null;	
-	}else if(other=="执业年限"){
-		other=1;	
-	}else{
-		other=2;	
+	if(orderby=="综合排序"){
+		orderby=null;
 	}
-	//把这些经过处理的数据传递到后台
-	window.location.href="http://localhost:8080/LawerSys/condition.action?laddress"+cs+"&&";
-	alert(cs+cs+kk+other);
+	window.location.href="http://localhost:8080/LawerSys/searchmore.action?laddress="+ct+"&&kinds="+kk+"&&orderby="+orderby;	
+}
+//根据律师名称或者事务所名称查询
+function queryname(kind){
+	var kk=$("#selected").val();
+	var name=$("#condition").val();
+	if(kk=="选择查询条件"||kk=="律师名字"){
+		kk=1;
+	}else{
+		kk=2;
+	}
+	window.location.href="http://localhost:8080/LawerSys/searchbyname.action?lid="+kk+"&&lanme="+name;	
 }

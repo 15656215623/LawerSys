@@ -1,12 +1,10 @@
 package cn.com.service;
-import org.hibernate.internal.SessionFactoryImpl;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Test {
 public static void main(String[] args) {
-	ApplicationContext ioc=new ClassPathXmlApplicationContext("applicationContext.xml");
+	System.out.println("你好");
+	/*ApplicationContext ioc=new ClassPathXmlApplicationContext("applicationContext.xml");
 	SessionFactoryImpl session=(SessionFactoryImpl) ioc.getBean("sessionFactoryBean");
-	session.toString();
+	session.toString();*/
 	/*AuditDemos au=(AuditDemos) ioc.getBean("auditDemos");
 	 au.over_Audit();*/
 	/*AuditDemos au=new AuditDemos();

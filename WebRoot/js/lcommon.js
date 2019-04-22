@@ -1,3 +1,11 @@
+//我的案例
+function  demokinds(){
+	//把当前的律师名进行查询
+	//获取存储的用户名
+	var user=localStorage.getItem("username");
+	window.location.href='http://localhost:8080/LawerSys/mydemo.action?lanme='+user;	
+}
+
 function  mydata(flag){
 	//获取存储的用户名
 	var user=localStorage.getItem("username");
@@ -8,7 +16,6 @@ function  mydata(flag){
 	}
 
 }
-
 
 //提交修改的资料
 function updatadata(){
@@ -94,13 +101,14 @@ function setlogo(){
 	
 	//ajax
 }
-//上传头像
 //上传多个案例
 function up_moredemo(){
-	//获取案例的类型，如果案例类型是null的话，就不提交
-	var kk=$("#kk").val();
+//获取案例的类型，如果案例类型是null的话，就不提交
+var kinds=$("#lcomuli option:selected").text();
+$("#mykk").val(kinds);
+var kk=$("#mykk").val();
 	if(kk==""||kk==null){
-		alert("请选择上传案例的类型");
+		alert("请选择一个案例类型，以便管理员审核");
 	}else{
 		alert("正在上传");
 		//ajax
@@ -116,10 +124,30 @@ function up_moredemo(){
 	    		//跳转页面
 	    		window.location.href='/LawerSys/demo.jsp';	
 	        }
-		})
-		
+		})	
 		//ajax	
 	}
-	
 }
 //上传多个案例
+//用户咨询
+function chat(){
+var lawername=localStorage.getItem("username");
+window.location.href="http://localhost:8080/LawerSys/noread.action?other="+lawername;
+}
+//用户咨询
+//用户咨询记录
+function  chart_order(){
+	var user=localStorage.getItem("username");
+	window.location.href="http://localhost:8080/LawerSys/hist_lawer.action?user="+user;	
+}
+//我的投诉
+function complaint(){
+//查询投诉
+	var user=localStorage.getItem("username");
+	window.location.href="http://localhost:8080/LawerSys/user_com.action?user="+user;	
+}
+//用户评价
+function pl(){
+	var user=localStorage.getItem("username");
+	window.location.href="http://localhost:8080/LawerSys/mypl.action?user="+user;		
+}

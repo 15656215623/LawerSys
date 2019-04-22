@@ -12,11 +12,10 @@
 <title>律师公共部分</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/admin.css" />
-<script src="js/Admin.js"></script>
 <script src="js/lcommon.js"></script>
 </head>
-<body>
-<jsp:include page="head.jsp"></jsp:include>	
+<body>	
+<jsp:include page="lhead.jsp"></jsp:include>
 	<!-- 手风琴菜单 -->
 	<!--  手风琴菜单-->
 	<div class="panel-group" id="accordion">
@@ -64,16 +63,22 @@
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
-						href="#collapseThree"> 收到投诉 </a>
+						href="#collapseThree">咨询 </a>
 				</h4>
 			</div>
 			<div id="collapseThree" class="panel-collapse collapse in">
 				<div class="part_panel panel-body">
 					<p>
-						<a href="">用户投诉</a>
+						<a onclick="chat()">用户咨询</a>
 					</p>
 					<p>
-						<a href="">用户评价</a>
+						<a onclick="chart_order()">用户咨询记录</a>
+					</p>
+					<p>
+						<a onclick="complaint()">历史投诉</a>
+					</p>
+					<p>
+						<a onclick="pl()">用户评价</a>
 					</p>
 				</div>
 			</div>
@@ -130,7 +135,7 @@
 						<br>
 						<br>
 						<!-- 案例类型 -->
-						<select id="uli">
+						<select id="lcomuli">
 							<option>请选择案例类型</option>
 							<option>合同纠纷</option>
 							<option>借贷纠纷</option>
@@ -140,7 +145,7 @@
 							<option>房产纠纷</option>
 							<option>建筑工程</option>
 							<option>离婚纠纷</option>
-						</select> <input type="text" name="kinds" id="kk" /><br>
+						</select> <input type="text" name="kinds" id="mykk" style="display: none"/><br>
 						<br>
 						<button type="button" class="btn btn-success"
 							onclick="up_moredemo()">上传</button>

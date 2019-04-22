@@ -1,55 +1,46 @@
-#shead {
-	background-color: #3d578a;
-	width: 100%;
-	height: 30%;
-	vertical-align: middle;
-	font-size: 18px;
-	padding-top: 1%;
-	padding-bottom: 1%;
-}
 
-#shead ul li {
-	float: left;
-	list-style: none;
-	margin-left: 2%;
-}
+#shead{
+background-color: #3d578a;
+width: 100%;
+height: 30%;
+vertical-align: middle;
+font-size: 18px;
 
-.a {
-	color: white;
+padding-top: 1%;
+padding-bottom: 1%;
 }
+#shead ul li{
+float:left;
 
-#selected {
-	width: 100%;
-	height: 100%;
-	background-color: #f54545;
-	color: white;
-	margin-top: 1%;
-	padding-top: 2%;
-	padding-bottom: 3%;
-	text-align: center;
+list-style: none;
+margin-left: 2%;
 }
-/*把所有的select的三角都去除  */
-select {
-	/* 去掉三角 */
-	margin-left: 4%;
-	appearance: none;
-	-moz-appearance: none; /* Firefox */
-	-webkit-appearance: none; /* Safari 和 Chrome */
-	/* 去掉边框 */
-	border: 1px solid #5cb85c;
-	width: 118px;
-	height: 34px; display : block;
-	position: relative;
-	float: left;
+.a{
+	color:white;
+}
+#selected{
+width: 100%;
+height: 100%;
+background-color: #f54545;
+color: white;
+margin-top:1%;
+padding-top:2%;
+padding-bottom:3%;
+text-align:center;
+/* 去掉三角 */
+appearance:none;
+-moz-appearance:none; /* Firefox */
+-webkit-appearance:none; /* Safari 和 Chrome */
+/* 去掉边框 */
+  	border: 0;
 	display: block;
+	position: relative;
 }
-/*把所有的select的三角都去除  */
-.tab_top {
+.tab_top{
 	margin-top: 6%;
 }
-
-.logo {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
+.logo{
+width: 50px;
+height: 50px;
+border-radius:50%;
 }

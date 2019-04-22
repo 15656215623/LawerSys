@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.opensymphony.xwork2.ModelDriven;
 
 import cn.com.bean.Layer;
-import cn.com.bean.ShowLayer;
+import cn.com.bean.Showlayer;
 @Repository(value = "searchByGood")
 @Scope("prototype")
 public class SearchByGood implements RequestAware,ModelDriven<Layer>{
@@ -23,47 +23,53 @@ public class SearchByGood implements RequestAware,ModelDriven<Layer>{
 	private SessionFactory sf;
 	@Autowired
 	private Layer layer;
-	private String condition;
-	public String getCondition() {
-		return condition;
-	}
-	public void setCondition(String condition) {
-		this.condition = condition;
-	}
+	//根据纠纷的类型查询
 	@Transactional
 	public String bykind(){
-		String sql="select new ShowLayer(a.lid, a.lanme, a.laddress, a.ht, a.jd, a.ld, a.xs, a.jt, a.fc, a.jz, a.lh, l.logo, l.officename) from Comprecondition a , Layer l where a.lanme=l.lanme and l.kinds like ?";
+		String sql="select new Showlayer(c.lanme,c.laddress,c.ht,c.jd,c.ld,c.xs,c.jt,c.fc,c.jz,c.lh,l.logo,l.officename,l.kinds,c.start) from Comprecondition c, Layer l  where c.lanme=l.lanme and l.kinds like ? order by c.start desc";
 		Session session = sf.getCurrentSession();
 		Query query = session.createQuery(sql);
-		//把kind转换
 		String kind=layer.getKinds();
+		//把kind转换
 		try {
 			kind = new String (kind.getBytes("ISO-8859-1"),"UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("类型:"+kind);
 		query.setString(0, "%"+kind+"%");
 		@SuppressWarnings("unchecked")
-		List<ShowLayer> list = query.list();
+		List<Showlayer> list = query.list();
 		map.put("list", list);
 		return "success";
 	}
-	//根据名字0或者是律师事务所名称查询1
+	//根据事务所名称或者律师名称查询
 	@Transactional
 	public String byname(){
-		//获取condition,是0就查询名字是1就查询律师事务所的名字
-		Session session = sf.getCurrentSession();
-		Query query =null;
-		String sql="";
-		if(condition.equals("1")){
-			sql="select new ShowLayer(a.lid, a.lanme,a.laddress, a.ht, a.jd,a.ld, a.xs, a.jt, a.fc, a.jz,a.lh,l.logo,l.officename)  from Comprecondition a , Layer l where a.lanme=l.lanme and l.officename like ?";			
-		}else{
-			sql="select new ShowLayer(a.lid, a.lanme,a.laddress, a.ht, a.jd,a.ld, a.xs, a.jt, a.fc, a.jz,a.lh,l.logo,l.officename)  from Comprecondition a , Layer l where a.lanme=l.lanme and l.lanme like ?";			
+		//获取从后台传递过来的lid
+		int id=layer.getLid();
+		String sql=null;
+		if(id==1){
+		sql="select new Showlayer(c.lanme,c.laddress,c.ht,c.jd,c.ld,c.xs,c.jt,c.fc,c.jz,c.lh,l.logo,l.officename,l.kinds,c.start) from Comprecondition c, Layer l  where c.lanme=l.lanme and l.lanme like ? order by c.start desc";	
 		}
-		query = session.createQuery(sql);
-		query.setString(0, "%"+layer.getLanme()+"%");
-		List<ShowLayer> list = query.list();
+		if(id==2){
+		sql="select new Showlayer(c.lanme,c.laddress,c.ht,c.jd,c.ld,c.xs,c.jt,c.fc,c.jz,c.lh,l.logo,l.officename,l.kinds,c.start) from Comprecondition c, Layer l  where c.lanme=l.lanme and l.officename like ? order by c.start desc";
+		}
+		Session session = sf.getCurrentSession();
+		Query query = session.createQuery(sql);
+		String lanme=layer.getLanme();
+		//把kind转换
+		try {
+			lanme = new String (lanme.getBytes("ISO-8859-1"),"UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("名称:"+lanme);
+		query.setString(0, "%"+lanme+"%");
+		@SuppressWarnings("unchecked")
+		List<Showlayer> list = query.list();
 		map.put("list", list);
 		return "success";
 	}

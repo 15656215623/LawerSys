@@ -12,47 +12,54 @@
 <title>共同的头部</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/index.css" />
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/head.js"></script>
+<script src="js/skiller.js"></script>
+<style>
+#start li,#start{
+list-style: none;
+float: left;
+}
+</style>
 </head>
 <body onload="load_data()">
-
-	<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-left">
-				<a class="navbar-brand" href="#" id="cue">还没登录，游客状态</a> <a
-					class="navbar-brand" href="#" id="uname"></a> <img
+				<a class="navbar-brand" id="cue">还没登录，游客状态</a> <a
+					class="navbar-brand"  id="uname"></a> <img
 					style="width:50px;height:50px;border-radius:50%;" id="mylogo" />
 			</div>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a>
-						<button type="button" data-toggle="modal" data-target="#superuser"
-							class="btn btn-success">管理员登录</button>
-				</a></li>
-				<li><a href="index.jsp">
+				<li><a href="http://localhost:8080/LawerSys/apush.action">
 						<button type="button" data-toggle="modal" data-target="#layre"
 							class="btn btn-success">首页</button>
 				</a></li>
-				<li><a href="#">
+				<li><a  id="mycenter">
+						<button type="button" class="btn btn-success">个人中心</button>
+				</a></li>
+				<li><a >
+						<button type="button" data-toggle="modal" data-target="#superuser"
+							class="btn btn-success">管理员登录</button>
+				</a></li>
+				<li><a >
 						<button type="button" data-toggle="modal" data-target="#layre"
 							class="btn btn-success">注册</button>
 				</a></li>
-				<li><a href="#">
+				<li><a >
 						<button type="button" data-toggle="modal" data-target="#laylo"
 							class="btn btn-info">登录</button>
 				</a></li>
-				<li><a href="#">
+				<li><a >
 						<button type="button" class="btn btn-danger" onclick="exitu()">退出</button>
 				</a></li>
 			</ul>
 		</div>
 	</nav>
-	<!-- 模态框部分 -->
 
-	<!-- 模态框 -->
+<!-- 模态框 -->
 	<div class="modal fade" id="layre" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -225,10 +232,14 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
+							<div class="col-md-10">
 								<button type="button" class="btn btn-default"
 									onclick="layerlogin()">登录</button>
 							</div>
+							<div class="col-md-2">
+								<span><a>忘记密码</a></span>
+							</div>
+							
 						</div>
 					</form>
 				</div>
@@ -247,10 +258,14 @@
 								<input type="password" class="form-control" id="upassword"
 									placeholder="密码">
 							</div>
+							
 						</div>
 						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
+							<div class="col-sm-10">
 								<button type="button" class="btn btn-default" onclick="ulogin()">登录</button>
+							</div>
+								<div class="col-md-2">
+								<span>忘记密码</span>
 							</div>
 						</div>
 					</form>
@@ -311,9 +326,10 @@
 	</div>
 	<!--律师登录  -->
 	<!-- 超级管理员登录 -->
-	<!-- 模态框部分 -->
+
+	
 </body>
 </html>
 
-
-
+			
+			

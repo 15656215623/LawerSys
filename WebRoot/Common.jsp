@@ -10,10 +10,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>公共部分</title>  
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/admin.css"/>
-<script src="js/Admin.js"></script>
   </head>
   <body>
- <jsp:include page="head.jsp"></jsp:include>
+  <jsp:include page="head.jsp"></jsp:include>
 <!-- 手风琴菜单 -->
 <!--  手风琴菜单--> 
 <div class="panel-group" id="accordion">
@@ -60,13 +59,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <div id="collapseThree" class="panel-collapse collapse in">
 <div class="part_panel panel-body">
-<p><a href="">用户投诉</a></p>
-<p><a href="">律师投诉</a></p>
+<p><a href="/LawerSys/usercom.action">用户投诉</a></p>
+<p><a href="/LawerSys/lawercom.action">律师投诉</a></p>
 </div>
 </div>
 </div>
 </div>
-
-
   </body>
+
 </html>

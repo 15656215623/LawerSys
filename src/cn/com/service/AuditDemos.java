@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import cn.com.bean.AuDemo;
 import cn.com.bean.LawDemo;
 import cn.com.bean.Layer;
+import cn.com.tools.PareString;
 import cn.com.tools.Upfile;
 
 import com.opensymphony.xwork2.ModelDriven;
@@ -87,25 +88,17 @@ public class AuditDemos implements RequestAware,ModelDriven<AuDemo>{
 		Query query = session.createQuery(sql);
 		query.setInteger(0, demo.getDid());
 		query.executeUpdate();
-		//以一个数组
-		String kinds=demo.getKinds();
-		String [] watch={"ht","jd","ld","xs","jt","fc","jz","lh"};
-		String [] sz={"合同纠纷","借贷纠纷","劳动纠纷","刑事辩护","交通事故","房产纠纷","建筑纠纷","离婚纠纷"};
-		for (int i = 0; i < sz.length; i++) {
-			if(kinds.equals(sz[i])){
-				//插入到表中
-				String osql="update Comprecondition set "+watch[i]+"="+watch[i]+"+1 where lanme=?";
-				Query qother = session.createQuery(osql);
-				qother.setString(0, demo.getLanme());
-				qother.executeUpdate();
-			}
-		}
-		//以一个数组
 		LawDemo ld=new LawDemo();
 		ld.setDemo(demo.getDemo());
 		ld.setLanme(demo.getLanme());
 		ld.setKinds(demo.getKinds());
 		session.save(ld);
+		//获取类型，给这个表com数目加一
+		String kk=PareString.pared(demo.getKinds());
+		String sqls="update Comprecondition set "+kk+"="+kk+"+1 where lanme=?";
+		Query qs = session.createQuery(sqls);
+		qs.setString(0, demo.getLanme());
+		qs.executeUpdate();
 		return null;
 	}
 	//审核案例通过，把audemo里面flag变成1，插入数据到layer表里

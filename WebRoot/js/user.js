@@ -28,3 +28,27 @@ function resetpass(){
 		$("#repass").val('');
 	}
 }
+//根据用户名查找律师订单
+function findorder(){
+	var user=localStorage.getItem("username");
+	window.location.href="http://localhost:8080/LawerSys/hist_order.action?user="+user;
+}
+//根据用户名查找律师订单
+//我的评价
+function myaccess(){
+	//根据用户名查询content不为null的数据显示在页面上
+	var user=localStorage.getItem("username");
+	window.location.href="http://localhost:8080/LawerSys/access_order.action?user="+user;
+}
+//我的投诉
+function complaint(){
+//查询投诉
+	var user=localStorage.getItem("username");
+	window.location.href="http://localhost:8080/LawerSys/mycom.action?user="+user;	
+}
+//我咨询的类型
+function mykinds(){
+	var user=localStorage.getItem("username");
+	window.location.href="http://localhost:8080/LawerSys/ukinds.action?username="+user;	
+	
+}

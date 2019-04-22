@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.action.extension" value="do,action,kk"></constant>
+	<package name="chart" extends="struts-default">
+		<default-interceptor-ref name="defaultStack"></default-interceptor-ref>
+		<!--websocket把数据插入到数据库里面  -->
+	<action  name="inchart"  method="insertdata"  class="saveChart">
+	</action>
+	<!-- 用户查看历史记录 -->
+	<action  name="queryhistory"  method="queryh"  class="record">
+	<result name="success">/websocket.jsp</result>
+	</action>
+	<!-- 律师哪些用户来咨询 -->
+	<action  name="noread"  method="UserMess"  class="noReadMess">
+	<result name="success">/message.jsp</result>
+	</action>
+	<!--律师查看用户未读的咨询信息  -->
+	<action  name="law_query"  method="lqueryh"  class="record">
+	<result name="success">/serversocket.jsp</result>
+	</action>
+	<!-- 用户查询咨询的律师和类型时间 -->
+	<action  name="hist_order"  method="qorder"  class="chartOrder">
+	<result name="success">/myorder.jsp</result>
+	</action>
+	<!-- 律师查询咨询的用户和类型时间 -->
+	<action  name="hist_lawer"  method="qorder"  class="lawerOrder">
+	<result name="success">/lawerorder.jsp</result>
+	</action>
+	<!-- 查询评价 -->
+	<action  name="access_order"  method="qorder"  class="chartOrder">
+	<result name="success">/myaccess.jsp</result>
+	</action>
+	<!-- 查询评价 -->
+	<!-- 和某个律师的所有记录 -->
+	<action  name="operate_all"  method="queryAll"  class="operateRecord">
+	<result name="success">/chartlog.jsp</result>
+	</action>
+	<!-- 和某个律师的所有记录 -->
+	<!-- 和某个用户的所有记录 -->
+	<action name="operate_user"  method="queryAll"  class="userRecord">
+	<result name="success">/chartlog.jsp</result>
+	</action>
+	<!-- 和某个律师的所有记录 -->
+	<!-- 删除记录 -->
+	<action  name="operate_delete"  method="queryDelete"  class="operateRecord">
+	<result name="success" type="redirectAction">hist_order</result>
+	</action>
+	<!-- 删除记录 -->
+	<!-- 打星和评价 -->
+	<action  name="setstart"  method="setStart"  class="userDiscuss">
+	</action>
+	<!-- 打星和评价 -->
+	<!-- 用户投诉 -->
+	<action  name="complaint"  method="mycomplaint"  class="sendComplaint">
+	</action>
+	<!-- 用户投诉 -->
+	<!--律师投诉  -->
+	<action  name="ucomplaint"  method="mycomplaint"  class="sendUComplaint">
+	</action>
+	<!--律师投诉  -->
+	<!-- 用户的投诉记录 -->
+	<action  name="mycom"  method="comp"  class="sendComplaint">
+	<result name="success">/mycomp.jsp</result>
+	</action>
+	<!-- 用户的投诉记录  -->
+	<!-- 律师的投诉记录 -->
+	<action  name="user_com"  method="comp"  class="sendUComplaint">
+	<result name="success">/lcomp.jsp</result>
+	</action>
+	<!-- 律师的投诉记录 -->
+	<!--  律师查询评价-->
+	<action  name="mypl"  method="query_pl"  class="chartOrder">
+	<result name="success">/userpl.jsp</result>
+	</action>
+	<!--  律师查询评价-->
+	<!--管理员查询用户投诉  -->
+	<action  name="usercom"  method="user"  class="userComp">
+	<result name="success">/usercomp.jsp</result>
+	</action>
+	<!--管理员查询用户投诉  -->
+	<!--管理员查询律师投诉  -->
+	<action  name="lawercom"  method="layer"  class="userComp">
+	<result name="success">/layercomp.jsp</result>
+	</action>
+	<!--管理员查询律师投诉  -->
+	<!-- 管理员删除投诉 -->
+	<action  name="layerde"  method="deleteL"  class="userComp">
+	<result name="success" type="redirectAction">lawercom</result>
+	</action>
+	<!-- 管理员删除投诉 -->
+	</package>
+</struts>

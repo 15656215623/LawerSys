@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
 <hibernate-mapping>
 <!-- 实体类和表的映射 -->
-<class name="cn.com.bean.ShowLayer" table="showLayer" catalog="lawer" >
+<class name="cn.com.bean.Showlayer" table="showlayer" catalog="lawer" >
 <id name="lid" column="lid"  type="java.lang.Integer">
 <generator class="identity"></generator>
 </id>
@@ -17,6 +17,8 @@
 <property name="jz" type="java.lang.Integer" length="255"></property>
 <property name="lh" type="java.lang.Integer" length="255"></property>
 <property name="logo" type="java.lang.String" length="255"></property>
+<property name="kinds" type="java.lang.String" length="255"></property>
+<property name="start" type="java.lang.Integer" length="255"></property>
 <property name="officename" type="java.lang.String" length="255"></property>
 </class>
 </hibernate-mapping>

@@ -36,7 +36,7 @@ public class LawerRegedit  implements ModelDriven<Audit>{
 	 */
 	@Transactional
 	public String auditPass(){
-		//1.插入到layer表里
+		//0.插入到layer表里
 		Session session=sf.getCurrentSession();
 		//根据id查询表里audit的数据，把返回的数据插入到lawer表里面
 		String sq="from Audit where lid=?";
@@ -55,12 +55,12 @@ public class LawerRegedit  implements ModelDriven<Audit>{
 		l.setKinds(au.getKinds());
 		l.setLogo("logo/mr.png");
 		session.save(l);
-		//保存到另一个表里
+		//把lanme,laddress保存到Comm
 		Comprecondition com=new Comprecondition();
 		com.setLanme(au.getLanme());
 		com.setLaddress(au.getLaddress());
 		session.save(com);
-		//2.改为1
+		//2.把表里的flag变成1
 		String sql="update Audit set flag=? where lid=?";
 		Query qu=session.createQuery(sql);
 		qu.setInteger(0, 1);
@@ -77,16 +77,16 @@ public class LawerRegedit  implements ModelDriven<Audit>{
 		query.setString(0, audit.getLanme());
 		query.setString(1, audit.getPassword());
 		Layer u=(Layer)query.uniqueResult();
-		 String toast="";
+		  String logo="";
 		 if(u!=null){
-			 toast="success"; 
+			 logo=u.getLogo();
 		 }else{
-			 toast="fail"; 
+			 logo="fail"; 
 		 }
 		 HttpServletResponse response = ServletActionContext.getResponse();
 			response.setCharacterEncoding("utf-8");
 			try {
-				response.getWriter().write(toast);
+				response.getWriter().write(logo);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

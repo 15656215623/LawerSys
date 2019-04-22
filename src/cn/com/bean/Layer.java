@@ -1,4 +1,6 @@
 package cn.com.bean;
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 @Repository(value="layer")
 public class Layer {

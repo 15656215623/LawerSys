@@ -36,7 +36,7 @@ public String query_audit(){
 	Query query=session.createQuery(sql);
     @SuppressWarnings("unchecked")
 	List<Audit> list=query.list();
-    //把list集合循环遍历在前端页面上
+//把list集合循环遍历在前端页面上
     map.put("list", list);
 	return "success";
 }

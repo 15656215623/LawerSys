@@ -11,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-  <jsp:include page="head.jsp"></jsp:include>
+ <jsp:include page="head.jsp"></jsp:include>
 <div class="container" style="margin-top: 6%;margin-left: 20%;">
 <img src="image/shenhe.PNG" />
 </div>

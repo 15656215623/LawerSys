@@ -1,5 +1,7 @@
+
+
 $(document).ready(function() {
-	$("#kk").val('');
+	$("#mykk").val('');
 	//根据ul的id来获取下面所有的li元素 并且为每个li配置点击事件
 	$("#uli option").click(function() {
 		//获取选中的li里面的值
@@ -19,4 +21,6 @@ $(document).ready(function() {
 function demokinds(){
 	var user=localStorage.getItem("username");
 	window.location.href="http://localhost:8080/LawerSys/mydemo.action?lanme="+user;
+	
+	
 }

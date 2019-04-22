@@ -1,13 +1,10 @@
 package cn.com.bean;
-
 import org.springframework.stereotype.Repository;
 @Repository(value="comprecondition")
 public class Comprecondition {
-//综合查询的bean类
 private int lid;
 private String lanme;
 private String laddress;
-//合同纠纷 借贷纠纷 劳动纠纷 刑事辩护  交通事故  房产纠纷 建筑纠纷 离婚纠纷
 private int ht;
 private int jd;
 private int ld;
@@ -16,6 +13,20 @@ private int jt;
 private int fc;
 private int jz;
 private int lh;
+private int count;
+private int start;
+public int getCount() {
+	return count;
+}
+public void setCount(int count) {
+	this.count = count;
+}
+public int getStart() {
+	return start;
+}
+public void setStart(int start) {
+	this.start = start;
+}
 public int getLid() {
 	return lid;
 }

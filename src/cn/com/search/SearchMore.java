@@ -35,7 +35,7 @@ public class SearchMore implements RequestAware,ModelDriven<Layer>{
 	@Transactional
 	public String byMore() throws UnsupportedEncodingException{
 		//最基础的sql
-		String sql="select new Showlayer(c.lanme,c.laddress,c.ht,c.jd,c.ld,c.xs,c.jt,c.fc,c.jz,c.lh,l.logo,l.officename) from Comprecondition c, Layer l  where  c.lanme=l.lanme and l.laddress like ?";
+		String sql="select new Showlayer(c.lanme,c.laddress,c.ht,c.jd,c.ld,c.xs,c.jt,c.fc,c.jz,c.lh,l.logo,l.officename,l.kinds,c.start) from Comprecondition c, Layer l  where  c.lanme=l.lanme and l.laddress like ?";
 		//获取城市名,类型，并且转换成中文
 		String laddress=layer.getLaddress();
 		laddress = new String (laddress.getBytes("ISO-8859-1"),"UTF-8");
